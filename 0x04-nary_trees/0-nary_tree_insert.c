@@ -30,7 +30,12 @@ nary_tree_t *nary_tree_insert(nary_tree_t *parent, char const *str)
 	node->content = dup;
 
 	if (parent == NULL)
+	{
+		node->parent = NULL;
+		node->children = NULL;
+		node->next = NULL;
 		return (node);
+	}
 
 	if (parent->children == NULL)
 	{
