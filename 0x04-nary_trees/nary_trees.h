@@ -25,5 +25,10 @@ nary_tree_t *nary_tree_insert(nary_tree_t *parent, char const *str);
 nary_tree_t *create_node(char const *str);
 void nary_tree_delete(nary_tree_t *tree);
 size_t nary_tree_traverse(nary_tree_t const *root, void (*action)(nary_tree_t const *node, size_t depth));
+size_t nary_tree_search(nary_tree_t const *root, void (*action)(nary_tree_t const *node, size_t depth), size_t _depth);
+size_t nary_tree_diameter(nary_tree_t const *root);
+size_t find_diameter(nary_tree_t const *root, size_t depth, size_t *diameter);
+int path_exists(nary_tree_t const *root, char const * const *path);
+int check_path(nary_tree_t const *root, char const * const *path, size_t pidx);
 
 #endif /*__NARY_TREES_H__*/
